@@ -1,4 +1,5 @@
 import ReactLogo from './assets/logo.png'
+import './styles.css'
 // const content = [
 
 // ]
