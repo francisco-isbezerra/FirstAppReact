@@ -2,10 +2,7 @@ import ReactLogo from './assets/logo.png'
 import './styles.css'
 import { useState } from "react";
 
-// content[0] → Why React?
-// content[1] → Core Features
-// content[2] → Related Resources
-// content[3] → React vs JS
+//CONTEUDO QUE SERA USADO NA PAGINA
 const content = [
   [
     "React is extremely popular",
@@ -31,8 +28,14 @@ const content = [
     "With React, you define the goal and React figures out how to get there"
   ]
 ];
+// content[0] → Why React?
+// content[1] → Core Features
+// content[2] → Related Resources
+// content[3] → React vs JS
 
 export default function App() {
+  //CRIAR ESTADOS
+  //const [estado dubçãoi que altera o estado da aplicaçao ] = useState (valor inicial)
   const [activeContentIndex, setActiveContentIndex] = useState(0);
 
   return (
