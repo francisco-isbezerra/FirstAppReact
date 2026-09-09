@@ -1,5 +1,6 @@
 import ReactLogo from './assets/logo.png'
 import './styles.css'
+import { useState } from "react";
 
 // content[0] → Why React?
 // content[1] → Core Features
@@ -32,10 +33,12 @@ const content = [
 ];
 
 export default function App() {
+  const [activeContentIndex, setActiveContentIndex] = useState(0);
+
   return (
     <div>
       <header>
-        <img src={ReactLogo} alt="React logo" />
+      <img src={ReactLogo} alt="React logo" />
         <div>
           <h1>React.js</h1>
           <p>i.e., using the React library for rendering the UI</p>
@@ -44,17 +47,23 @@ export default function App() {
 
       <div id="tabs">
         <menu>
-          <button>Why React?</button>
-          <button>Core Features</button>
-          <button>Related Resources</button>
+          <button onClick={() => setActiveContentIndex(0)}>
+            Why React?
+          </button>
+          <button onClick={() => setActiveContentIndex(1)}>
+            Core Features
+          </button>
+          <button onClick={() => setActiveContentIndex(2)}>
+            Related Resources
+          </button>
         </menu>
 
         <div id="tab-content">
-        <ul>
-          {content[0].map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+          <ul>
+            {content[activeContentIndex].map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
